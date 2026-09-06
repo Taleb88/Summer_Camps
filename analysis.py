@@ -13,4 +13,5 @@ print('\n west coast states df:\n', west_coast_states_df)
 print(new_york_state_df[new_york_state_df['review_score'] <= 4.0])
 print("\n camps in east coast states with scholarships",east_coast_states_df[(east_coast_states_df['scholarships_available'] == 'Yes') & (east_coast_states_df['category'] == 'Sports')])
 
-#xlookup type
+# calculations
+midwest_states_df['age_avg'] = midwest_states_df['']
