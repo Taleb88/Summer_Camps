@@ -28,11 +28,11 @@ def rating(x):
     try:
         if x >= 4.50:
             return "Yes"
-        elif x >= 3.75 and x <= 4.49: 
+        elif x >= 3.70 and x < 4.50: 
             return "Highly Likely"
-        elif x >= 3.00 and x <= 3.74: 
+        elif x >= 3.00 and x < 3.7: 
             return "Maybe"
-        elif x >= 2.00 and x <= 2.99: 
+        elif x >= 2.00 and x < 3.00: 
             return "Unlikely"
         elif x < 2.00:
             return "No"
