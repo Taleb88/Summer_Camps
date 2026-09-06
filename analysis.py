@@ -24,12 +24,13 @@ midwest_states_df['avg_age'] = avg_age(midwest_states_df)
 print(midwest_states_df[['camp_name','avg_age', 'city', 'state_abbr']].head(20))
 
 
+west_coast_states_df['review_score'] = west_coast_states_df['review_score'].astype(float)
 def rating(west_coast_states_df):
     try:
-        if 
-
-        elif
-
+        if west_coast_states_df['review_score'] >= 4.50:
+            return "yes"
+        elif west_coast_states_df['review_score'] >= 4.00 and west_coast_states_df['review_score'] >= 4.49: 
+            
         elif
 
         elif
