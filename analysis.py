@@ -35,6 +35,9 @@ def rating(west_coast_states_df):
             return "Maybe"
         elif west_coast_states_df['review_score'] >= 2.00 and west_coast_states_df['review_score'] <= 2.99: 
             return "Unlikely"
+        elif west_coast_states_df['review_score'] < 2.00:
+            return "No"
+
     except Exception as e:
         print(f'error - unable to determine pass/fail score per review_score {type(e)}')
 
