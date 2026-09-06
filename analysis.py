@@ -24,22 +24,20 @@ midwest_states_df['avg_age'] = avg_age(midwest_states_df)
 print(midwest_states_df[['camp_name','avg_age', 'city', 'state_abbr']].head(20))
 
 
-west_coast_states_df['review_score'] = west_coast_states_df['review_score'].astype(float)
-def rating(west_coast_states_df):
+def rating(x):
     try:
-        if west_coast_states_df['review_score'] >= 4.50:
+        if x >= 4.50:
             return "Yes"
-        elif west_coast_states_df['review_score'] >= 3.75 and west_coast_states_df['review_score'] <= 4.49: 
+        elif x >= 3.75 and x <= 4.49: 
             return "Highly Likely"
-        elif west_coast_states_df['review_score'] >= 3.00 and west_coast_states_df['review_score'] <= 3.74: 
+        elif x >= 3.00 and x <= 3.74: 
             return "Maybe"
-        elif west_coast_states_df['review_score'] >= 2.00 and west_coast_states_df['review_score'] <= 2.99: 
+        elif x >= 2.00 and x <= 2.99: 
             return "Unlikely"
-        elif west_coast_states_df['review_score'] < 2.00:
+        elif x < 2.00:
             return "No"
-
     except Exception as e:
         print(f'error - unable to determine pass/fail score per review_score {type(e)}')
 
-midwest_states_df['recommended?'] = rating(west_coast_states_df)
-print(midwest_states_df[['camp_name','avg_age', 'city', 'state_abbr','recommended?']].head(20))
+west_coast_states_df['recommended?'] = west_coast_states_df.apply(lambda x: rating(x['review_score']), axis="columns")
+print('\n',west_coast_states_df[['camp_name','city', 'state_abbr', 'review_score', 'recommended?']].head(20))
