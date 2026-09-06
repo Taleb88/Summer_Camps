@@ -15,3 +15,5 @@ print("\n camps in east coast states with scholarships",east_coast_states_df[(ea
 
 # calculations
 midwest_states_df['avg_age'] = (midwest_states_df['min_age'].astype(float) + midwest_states_df['max_age'].astype(float)) / 2
+
+print(midwest_states_df[['camp_name','avg_age']])
