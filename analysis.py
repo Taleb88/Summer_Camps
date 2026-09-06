@@ -28,12 +28,13 @@ west_coast_states_df['review_score'] = west_coast_states_df['review_score'].asty
 def rating(west_coast_states_df):
     try:
         if west_coast_states_df['review_score'] >= 4.50:
-            return "yes"
-        elif west_coast_states_df['review_score'] >= 4.00 and west_coast_states_df['review_score'] >= 4.49: 
-            
-        elif
-
-        elif
+            return "Yes"
+        elif west_coast_states_df['review_score'] >= 3.75 and west_coast_states_df['review_score'] <= 4.49: 
+            return "Highly Likely"
+        elif west_coast_states_df['review_score'] >= 3.00 and west_coast_states_df['review_score'] <= 3.74: 
+            return "Maybe"
+        elif west_coast_states_df['review_score'] >= 2.00 and west_coast_states_df['review_score'] <= 2.99: 
+            return "Unlikely"
     except Exception as e:
         print(f'error - unable to determine pass/fail score per review_score {type(e)}')
 
